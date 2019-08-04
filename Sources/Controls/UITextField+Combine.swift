@@ -10,7 +10,7 @@ import Combine
 import UIKit
 
 public extension UITextField {
-  /// A publisher emitting any text changes to a this text field.
+  /// A publisher emitting any text changes to this text field.
   var textPublisher: AnyPublisher<String?, Never> {
     CombineControlProperty(control: self, events: .defaultValueEvents, keyPath: \.text)
       .eraseToAnyPublisher()
@@ -22,7 +22,7 @@ public extension UITextField {
       .eraseToAnyPublisher()
   }
 
-  /// A publisher that emits whenever the user taps the return button and ends the editing on the text field.
+  /// A publisher that emits whenever the user taps the return button and ends the editing on this text field.
   var returnPublisher: AnyPublisher<Void, Never> {
     CombineControlEvent(control: self, events: .editingDidEndOnExit)
       .eraseToAnyPublisher()
